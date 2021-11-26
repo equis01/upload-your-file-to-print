@@ -1,185 +1,151 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: Roboto, sans-serif;
-  background: #eceffc;
+.dropfile{
+
+  height:170px;
+  border-radius:30px;
+
+  text-align:center;
+  padding-top:30px;
 }
 
-.upload {
-  --btn-color: #3bafda;
-  --progress-color: #2d334c;
-  --ease-in-out-quartic: cubic-bezier(0.77, 0, 0.175, 1);
-  position: relative;
-  display: flex;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 1.7px 1.4px rgba(0, 0, 0, 0.02), 0 4px 3.3px rgba(0, 0, 0, 0.028), 0 7.5px 6.3px rgba(0, 0, 0, 0.035), 0 13.4px 11.2px rgba(0, 0, 0, 0.042), 0 25.1px 20.9px rgba(0, 0, 0, 0.05), 0 60px 50px rgba(0, 0, 0, 0.07);
-  overflow: hidden;
-  transform: rotate(0);
-}
-.upload__info {
-  display: flex;
-  align-items: center;
-  padding: 16px;
-  margin-right: 40px;
-}
-.upload__filename {
-  padding-left: 8px;
-}
-.upload__button {
-  position: relative;
-  padding: 16px;
-  margin: 0;
-  font-size: 100%;
-  font-family: inherit;
-  color: white;
-  background: none;
-  border: none;
-  border-radius: inherit;
-  outline: none;
-  cursor: pointer;
-  transform: scale(0.9);
-}
-.upload__button::before {
-  position: absolute;
-  content: "";
-  z-index: -1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--btn-color);
-  border-radius: inherit;
-  transform-origin: right;
-}
-.upload__hint {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  color: white;
-  transform: translateY(100%);
-}
-.upload__progress {
-  position: absolute;
-  content: "";
-  top: 90%;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  color: white;
-  background: var(--progress-color);
-  transform: scaleX(0);
-  transform-origin: left;
-}
-.upload__progress .check {
-  stroke-dasharray: 16px;
-  stroke-dashoffset: 16px;
-  margin-right: 6px;
-}
-.upload.uploading .upload__button {
-  animation: expand 0.3s forwards;
-}
-.upload.uploading .upload__button::before {
-  animation: fill-left 1.2s 0.4s var(--ease-in-out-quartic) forwards;
-}
-.upload.uploading .upload__info > *,
-.upload.uploading .upload__button__text {
-  animation: fade-up-out 0.4s 0.4s forwards;
-}
-.upload.uploading .upload__hint {
-  animation: fade-up-in 0.4s 0.8s forwards;
-}
-.upload.uploading .upload__progress {
-  animation: fill-right 2s 1s var(--ease-in-out-quartic) forwards;
-}
-.upload.uploaded .upload__progress {
-  animation: slide-up 1s var(--ease-in-out-quartic) forwards;
-}
-.upload.uploaded .upload__progress .check {
-  animation: stroke-in 0.6s 0.4s var(--ease-in-out-quartic) forwards;
-}
-.upload.uploaded-after .upload__info {
-  animation: slide-down-info 1s var(--ease-in-out-quartic) forwards;
-}
-.upload.uploaded-after .upload__button {
-  animation: slide-down-button 1s var(--ease-in-out-quartic) forwards;
-}
-.upload.uploaded-after .upload__progress {
-  animation: slide-down-progress 1s var(--ease-in-out-quartic) forwards;
+.upl{
+  margin:0 auto;
+  margin-top:20px;
+  font-size:20px;
 }
 
-@keyframes expand {
-  to {
-    transform: scale(1);
-  }
+
+
+
+
+
+
+
+
+.drop_uploader.drop_zone {
+    width: 100%;
+    min-height: 100px;
+    text-align: center;
+    border: 3px dashed #999999;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    margin: 10px 0;
 }
-@keyframes fill-left {
-  to {
-    transform: scale(4, 1.2);
-  }
+
+.drop_uploader.drop_zone.hover {
+    border: 3px dashed #4A90E2;
 }
-@keyframes fade-up-out {
-  to {
+
+.drop_uploader.drop_zone .text_wrapper {
+    margin-top: 30px;
+}
+
+.drop_uploader.drop_zone .text_wrapper i {
+    font-size: 50px;
+    color: #9B9B9B;
+    position: relative;
+    top: 14px;
+    margin-right: 25px;
+}
+
+.drop_uploader.drop_zone .text {
+    font-family: "Raleway";
+    font-size: 24px;
+    color: #9B9B9B;
+}
+
+.drop_uploader.drop_zone ul.files {
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+    list-style: none;
+    margin: 10px auto 35px;
+}
+
+.drop_uploader.drop_zone ul.files li {
+    font-family: "Raleway";
+    font-size: 18px;
+    color: #000000;
+    background-color: #f5f5f5;
+    border-top: 2px solid #f5f5f5;
+    border-bottom: 2px solid #f5f5f5;
+    margin: 0;
+    padding: 5px;
+}
+
+.drop_uploader.drop_zone ul.files.thumb {
+    width: 90%;
+    text-align: left;
+    list-style: none;
+    margin-bottom: 35px;
+    overflow: auto;
+}
+
+.drop_uploader.drop_zone ul.files.thumb li {
+    width: 110px;
+    display: inline-block;
+    float: left;
+    font-family: "Raleway";
+    font-size: 18px;
+    color: #000000;
+    background-color: transparent;
+    border: none;
+    margin: 0;
+    padding: 5px 15px;
+    text-align: center;
+}
+
+.drop_uploader.drop_zone ul.files.thumb li div.thumbnail {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px 8px 8px 8px;
+    -moz-border-radius: 8px 8px 8px 8px;
+    -webkit-border-radius: 8px 8px 8px 8px;
+    background-size: cover;
+    margin: 0 auto;
+    border: 1px solid #e1e1e1;
+}
+
+.drop_uploader.drop_zone ul.files.thumb li div.thumbnail i {
+    font-size: 48px;
+    position: relative;
+    top: calc(50% - 24px);
+    color: #999999;
+}
+
+.drop_uploader.drop_zone ul.files.thumb li span.title {
+    width: 110px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+
+ ul.files.thumb li span.title {
+    width: 110px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+
+.drop_uploader.drop_zone ul.files li:nth-child(even) {
+    background-color: transparent;
+}
+
+.drop_uploader.drop_zone ul.files li i {
+    font-size: 20px;
+    position: relative;
+    top: 2px;
+    margin: 0px 10px;
+}
+
+.drop_uploader.drop_zone .errors p {
+    color: #FF0000;
+}
+
+.drop_uploader.drop_zone input[type=file] {
+    display: none;
     opacity: 0;
-    transform: translateY(-40%);
-  }
-}
-@keyframes fade-up-in {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes fill-right {
-  to {
-    transform: scaleX(1);
-  }
-}
-@keyframes slide-up {
-  from {
-    transform: scaleX(1) translateY(0);
-  }
-  to {
-    transform: scaleX(1) translateY(-90%);
-  }
-}
-@keyframes stroke-in {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-@keyframes slide-down-info {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-@keyframes slide-down-button {
-  from {
-    transform: scale(0.9) translateY(-100%);
-  }
-  to {
-    transform: scale(0.9) translateY(0);
-  }
-}
-@keyframes slide-down-progress {
-  from {
-    transform: scaleX(1) translateY(-90%);
-  }
-  to {
-    transform: scaleX(1) translateY(10%);
-  }
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 }
